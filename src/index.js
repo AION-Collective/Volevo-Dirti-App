@@ -1,28 +1,5 @@
-const mediaSelector = document.getElementById("media");
-
-const webCamContainer = document.getElementById("web-cam-container");
-
-let selectedMedia = null;
-
 // This array stores the recorded media data
 let chunks = [];
-
-// Handler function to handle the "change" event
-// when the user selects some option
-mediaSelector.addEventListener("change", (e) => {
-  // Takes the current value of the mediaSeletor
-  selectedMedia = e.target.value;
-
-  document.getElementById(`${selectedMedia}-recorder`).style.display = "block";
-
-  document.getElementById(
-    `${otherRecorderContainer(selectedMedia)}-recorder`
-  ).style.display = "none";
-});
-
-function otherRecorderContainer(selectedMedia) {
-  return selectedMedia === "vid" ? "aud" : "vid";
-}
 
 // This constraints object tells
 // the browser to include only
@@ -30,18 +7,6 @@ function otherRecorderContainer(selectedMedia) {
 const audioMediaConstraints = {
   audio: true,
   video: false
-};
-
-// This constraints object tells
-// the browser to include
-// both the audio and video
-// Media Tracks
-const videoMediaConstraints = {
-  // or you can set audio to
-  // false to record
-  // only video
-  audio: true,
-  video: true
 };
 
 // When the user clicks the "Start
@@ -52,7 +17,7 @@ function startRecording(thisButton, otherButton) {
   // Access the camera and microphone
   navigator.mediaDevices
     .getUserMedia(
-      selectedMedia === "vid" ? videoMediaConstraints : audioMediaConstraints
+      audioMediaConstraints
     )
     .then((mediaStream) => {
       // Create a new MediaRecorder instance
@@ -90,14 +55,14 @@ function startRecording(thisButton, otherButton) {
 			a Blob of the type given as the
 			second parameter*/
         const blob = new Blob(chunks, {
-          type: selectedMedia === "vid" ? "video/mp4" : "audio/mpeg"
+          type: "audio/mpeg"
         });
         chunks = [];
 
         // Create a video or audio element
         // that stores the recorded media
         const recordedMedia = document.createElement(
-          selectedMedia === "vid" ? "video" : "audio"
+          "audio"
         );
         recordedMedia.controls = true;
 
@@ -135,18 +100,11 @@ function startRecording(thisButton, otherButton) {
         };
 
         document
-          .getElementById(`${selectedMedia}-recorder`)
+          .getElementById(`aud-recorder`)
           .append(recordedMedia, downloadButton);
       };
 
-      if (selectedMedia === "vid") {
-        // Remember to use the srcObject
-        // attribute since the src attribute
-        // doesn't support media stream as a value
-        webCamContainer.srcObject = mediaStream;
-      }
-
-      document.getElementById(`${selectedMedia}-record-status`).innerText =
+      document.getElementById(`aud-record-status`).innerText =
         "Recording";
 
       thisButton.disabled = true;
@@ -164,7 +122,7 @@ function stopRecording(thisButton, otherButton) {
     track.stop();
   });
 
-  document.getElementById(`${selectedMedia}-record-status`).innerText =
+  document.getElementById(`aud-record-status`).innerText =
     "Recording done!";
   thisButton.disabled = true;
   otherButton.disabled = false;

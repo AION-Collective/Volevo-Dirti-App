@@ -1,165 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
 
-    <title>Volevo Dirti</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 
-  <body>
-    <h1 id="title">Volevo dirti</h1>
-    <label for="media">
-      Esprimiti:
-    </label>
+  <title>Volevo Dirti</title>
+</head>
 
-    <select id="media">
-      <option value="choose-an-option">
-        
-      </option>
-      <option value="vid">Video</option>
-      <option value="aud">Audio</option>
-    </select>
+<body>
+  <h1 id="title">Volevo dirti</h1>
 
-    <div class="display-none" id="vid-recorder">
-      <h3>Record Video</h3>
-      <video autoplay id="web-cam-container" style="background-color: black;">
-        Your browser doesn't support the video tag
-      </video>
+  <div class="recording" id="aud-recorder">
+    <h3>Record Audio</h3>
 
-      <div class="recording" id="vid-record-status">
-        Click the "Start video Recording" button to start recording
-      </div>
-
-      <!-- This button will start the video recording -->
-      <button
-        type="button"
-        id="start-vid-recording"
-        onclick="startRecording(this,
-			document.getElementById('stop-vid-recording'))"
-      >
-        Start video recording
-      </button>
-
-      <!-- This button will stop the video recording -->
-      <button
-        type="button"
-        id="stop-vid-recording"
-        disabled
-        onclick=" stopRecording(this,
-			document.getElementById('start-vid-recording'))"
-      >
-        Stop video recording
-      </button>
-
-      <!--The video element will be created using
-			JavaScript and contains recorded video-->
-      <!-- <video id="recorded-video" controls>
-			Your browser doesn't support the video tag
-		</video> -->
-
-      <!-- The below link will let the
-			users download the recorded video -->
-      <!-- <a href="" > Download it! </a> -->
+    <div class="recording" id="aud-record-status">
+      Click the "Start Recording" button to start recording
     </div>
 
-    <div class="display-none" id="aud-recorder">
-      <h3>Record Audio</h3>
+    <button type="button" id="start-aud-recording" onclick="startRecording(this,
+			document.getElementById('stop-aud-recording'))"stop>
+      Start recording
+    </button>
 
-      <div class="recording" id="aud-record-status">
-        Click the "Start Recording" button to start recording
-      </div>
+    <button type="button" id="stop-aud-recording" disabled onclick="stopRecording(this,
+			document.getElementById('start-aud-recording'))">
+      Stop recording
+    </button>
 
-      <button
-        type="button"
-        id="start-aud-recording"
-        onclick="startRecording(this,
-			document.getElementById('stop-aud-recording'))"
-      >
-        Start recording
-      </button>
-
-      <button
-        type="button"
-        id="stop-aud-recording"
-        disabled
-        onclick="stopRecording(this,
-			document.getElementById('start-aud-recording'))"
-      >
-        Stop recording
-      </button>
-
-      <!-- The audio element will contain the
+    <!-- The audio element will contain the
 			recorded audio and will be created
 			using Javascript -->
-      <!-- <audio id="recorded-audio"
+    <!-- <audio id="recorded-audio"
 			controls></audio> -->
+  </div>
 
-      <!-- The below link will let the users
-			download the recorded audio -->
-      <!-- <a href="" > Download it! </a> -->
+  <script src="index.js"></script>
+
+  <div class="player">
+
+    <!-- Define the section for displaying track buttons -->
+    <div class="buttons">
+      <div class="prev-track" onclick="prevTrack()">
+        <i class="fa fa-step-backward fa-2x"></i>
+      </div>
+      <div class="playpause-track" onclick="playpauseTrack()">
+        <i class="fa fa-play-circle fa-5x"></i>
+      </div>
+      <div class="next-track" onclick="nextTrack()">
+        <i class="fa fa-step-forward fa-2x"></i>
+      </div>
     </div>
 
-    <script src="index.js"></script>
-    <body>
-      <div class="player">
-        <!-- Define the section for displaying details -->
-        <div class="details">
-          <div class="now-playing"></div>
-          <div class="track-art"></div>
-          <div class="track-name"></div>
-          <div class="track-artist"></div>
-        </div>
-  
-        <!-- Define the section for displaying track buttons -->
-        <div class="buttons">
-          <div class="prev-track" onclick="prevTrack()">
-            <i class="fa fa-step-backward fa-2x"></i>
-          </div>
-          <div class="playpause-track" onclick="playpauseTrack()">
-            <i class="fa fa-play-circle fa-5x"></i>
-          </div>
-          <div class="next-track" onclick="nextTrack()">
-            <i class="fa fa-step-forward fa-2x"></i>
-          </div>
-        </div>
-  
-        <!-- Define the section for displaying the seek slider-->
-        <div class="slider_container">
-          <div class="current-time">00:00</div>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="0"
-            class="seek_slider"
-            onchange="seekTo()"
-          />
-          <div class="total-duration">00:00</div>
-        </div>
-  
-        <!-- Define the section for displaying the volume slider-->
-        <div class="slider_container">
-          <i class="fa fa-volume-down"></i>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="99"
-            class="volume_slider"
-            onchange="setVolume()"
-          />
-          <i class="fa fa-volume-up"></i>
-        </div>
-      </div>
-  
-      <!-- Load the main script for the player -->
-      <script src="main.js"></script>
-  </body>
+    <!-- Define the section for displaying the seek slider-->
+    <div class="slider_container">
+      <div class="current-time">00:00</div>
+      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()" />
+      <div class="total-duration">00:00</div>
+    </div>
+
+    <!-- Define the section for displaying the volume slider-->
+    <div class="slider_container">
+      <i class="fa fa-volume-down"></i>
+      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()" />
+      <i class="fa fa-volume-up"></i>
+    </div>
+  </div>
+
+  <!-- Load the main script for the player -->
+  <script src="main.js"></script>
+</body>
+
 </html>
