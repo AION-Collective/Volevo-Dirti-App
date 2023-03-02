@@ -25,46 +25,10 @@ let curr_track = document.createElement("audio");
 // Define the list of tracks that have to be played
 let track_list = [
   {
-    name: "Jzimo",
-    artist: "Frack",
+    name: "Forest",
+    artist: "AION",
     image: "Image URL",
-    path: "Jzimo.mp3"
-  },
-  {
-    name: "Olga di Carta",
-    artist: "Aion Team",
-    image: "Image URL",
-    path: "Olga.mp3"
-  },
-  {
-    name: "Into the blue",
-    artist: "ExoProd",
-    image: "Image URL",
-    path: "Into.mp3"
-  },
-  {
-    name: "Stormy Forest - Ambient for Hello Nature",
-    artist: "Frack",
-    image: "Image URL",
-    path: "Forest.mp3"
-  },
-  {
-    name: "PerformIA Soundscape",
-    artist: "Frack",
-    image: "Image URL",
-    path: "PerformIA.mp3"
-  },
-  {
-    name: "CasaFools Soundscape",
-    artist: "Aion Team",
-    image: "Image URL",
-    path: "Casafools.mp3"
-  },
-  {
-    name: "Soundtrack Spettacolo C-R-E-A-T-I-V-A",
-    artist: "Frack e LaPoetessadifuoco",
-    image: "Image URL",
-    path: "creativa.mp3"
+    path: "Forest.wav"
   }
 ];
 
