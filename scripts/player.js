@@ -28,7 +28,7 @@ let track_list = [
     name: "Forest",
     artist: "AION",
     image: "Image URL",
-    path: "../tracks/Forest.wav"
+    path: "./tracks/Forest.wav"
   }
 ];
 
