@@ -1,7 +1,7 @@
 // Select all the elements in the HTML page
 // and assign them to a variable
-let now_playing = document.querySelector(".now-playing");
-let track_art = document.querySelector(".track-art");
+//let now_playing = document.querySelector(".now-playing");
+//let track_art = document.querySelector(".track-art");
 let track_name = document.querySelector(".track-name");
 let track_artist = document.querySelector(".track-artist");
 
@@ -27,7 +27,7 @@ let track_list = [
   {
     name: "Forest",
     artist: "AION",
-    image: "Image URL",
+    image: "URL",
     path: "./tracks/Forest.wav"
   }
 ];
@@ -42,12 +42,13 @@ function loadTrack(track_index) {
   curr_track.load();
 
   // Update details of the track
-  track_art.style.backgroundImage =
-    "url(" + track_list[track_index].image + ")";
+  /* track_art.style.backgroundImage =
+    "url(" + track_list[track_index].image + ")";*/
   track_name.textContent = track_list[track_index].name;
   track_artist.textContent = track_list[track_index].artist;
-  now_playing.textContent =
-    "PLAYING " + (track_index + 1) + " OF " + track_list.length;
+  
+  /*now_playing.textContent =
+    "PLAYING " + (track_index + 1) + " OF " + track_list.length;*/
 
   // Set an interval of 1000 milliseconds
   // for updating the seek slider
@@ -62,11 +63,11 @@ function loadTrack(track_index) {
 }
 
 function random_bg_color() {
-  // Get a random number between 64 to 256
+  // Get a random number between 0 to 256(-64)
   // (for getting lighter colors)
-  let red = Math.floor(Math.random() * 256) + 64;
-  let green = Math.floor(Math.random() * 256) + 64;
-  let blue = Math.floor(Math.random() * 256) + 64;
+  let red = Math.floor(Math.random() * 256) - 64;
+  let green = Math.floor(Math.random() * 256) - 64;
+  let blue = Math.floor(Math.random() * 256) - 64;
 
   // Construct a color with the given values
   let bgColor = "rgb(" + red + ", " + green + ", " + blue + ")";
@@ -129,6 +130,19 @@ function prevTrack() {
   playTrack();
 }
 
+function random() {
+  seek_slider.value = Math.floor(Math.random() * 90);
+  seekTo();
+}
+function seekTo() {
+  // Calculate the seek position by the
+  // percentage of the seek slider
+}
+
+function random() {
+  seek_slider.value = Math.floor(Math.random() * 95);
+  seekTo();
+}
 function seekTo() {
   // Calculate the seek position by the
   // percentage of the seek slider

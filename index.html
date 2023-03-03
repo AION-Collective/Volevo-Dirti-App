@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
   <meta charset="UTF-8" />
@@ -15,7 +15,6 @@
   <h1 id="title">Volevo dirti</h1>
 
   <div class="recording" id="aud-recorder">
-    <h3>Record Audio</h3>
 
     <div class="recording" id="aud-record-status">
       Click the "Start Recording" button to start recording
@@ -30,26 +29,17 @@
 			document.getElementById('start-aud-recording'))">
       Stop recording
     </button>
-
-    <!-- The audio element will contain the
-			recorded audio and will be created
-			using Javascript -->
-    <!-- <audio id="recorded-audio"
-			controls></audio> -->
   </div>
-
-  <script src="./scripts/recorder.js"></script>
-
+  
   <div class="player">
-
     <div class="details">
-      <div class="now-playing"></div>
-      <div class="track-art"></div>
+      <!-- <div class="now-playing"></div> -->
+      <!-- <div class="track-art"></div> -->
       <div class="track-name"></div>
       <div class="track-artist"></div>
     </div>
-
-    <!-- Define the section for displaying track buttons -->
+    
+    <!-- Track buttons -->
     <div class="buttons">
       <div class="prev-track" onclick="prevTrack()">
         <i class="fa fa-step-backward fa-2x"></i>
@@ -61,23 +51,27 @@
         <i class="fa fa-step-forward fa-2x"></i>
       </div>
     </div>
-
-    <!-- Define the section for displaying the seek slider-->
+    
+    <!-- Seek slider-->
     <div class="slider_container">
       <div class="current-time">00:00</div>
       <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()" />
       <div class="total-duration">00:00</div>
     </div>
 
-    <!-- Define the section for displaying the volume slider-->
-    <div class="slider_container">
+    <button type="button" onclick="random()">
+      Random
+    </button>
+    
+    <!-- Volume slider-->
+    <!-- <div class="slider_container">
       <i class="fa fa-volume-down"></i>
       <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()" />
       <i class="fa fa-volume-up"></i>
-    </div>
+    </div> -->
   </div>
-
-  <!-- Load the main script for the player -->
+  
+  <script src="./scripts/recorder.js"></script>
   <script src="./scripts/player.js"></script>
 </body>
 
