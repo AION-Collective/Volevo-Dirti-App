@@ -1,19 +1,14 @@
 // This array stores the recorded media data
 let chunks = [];
 
-// This constraints object tells
-// the browser to include only
-// the audio Media Track
 const audioMediaConstraints = {
-  audio: true,
-  video: false
+  audio: true
 };
 
 // When the user clicks the "Start
 // Recording" button this function
 // gets invoked
-document.getElementById(startRecording);
-function startRecording(thisButton, otherButton) {
+function startRecording() {
   // Access the camera and microphone
   navigator.mediaDevices
     .getUserMedia(
@@ -45,15 +40,15 @@ function startRecording(thisButton, otherButton) {
       // event
       mediaRecorder.onstop = () => {
         /* A Blob is a File like object.
-			In fact, the File interface is
-			based on Blob. File inherits the
-			Blob interface and expands it to
-			support the files on the user's
-			systemThe Blob constructor takes
-			the chunk of media data as the
-			first parameter and constructs
-			a Blob of the type given as the
-			second parameter*/
+      In fact, the File interface is
+      based on Blob. File inherits the
+      Blob interface and expands it to
+      support the files on the user's
+      systemThe Blob constructor takes
+      the chunk of media data as the
+      first parameter and constructs
+      a Blob of the type given as the
+      second parameter*/
         const blob = new Blob(chunks, {
           type: "audio/mpeg"
         });
@@ -86,33 +81,32 @@ function startRecording(thisButton, otherButton) {
         downloadButton.download = "Recorded-Media";
 
         downloadButton.href = recordedMediaURL;
-        downloadButton.innerText = "Download it!";
+        downloadButton.innerText = "Download";
 
         downloadButton.onclick = () => {
           /* After download revoke the created URL
-				using URL.revokeObjectURL() method to
-				avoid possible memory leak. Though,
-				the browser automatically revokes the
-				created URL when the document is unloaded,
-				but still it is good to revoke the created
-				URLs */
+        using URL.revokeObjectURL() method to
+        avoid possible memory leak. Though,
+        the browser automatically revokes the
+        created URL when the document is unloaded,
+        but still it is good to revoke the created
+        URLs */
           URL.revokeObjectURL(recordedMedia);
         };
 
         document
-          .getElementById(`aud-recorder`)
+          .getElementById("aud-recorder")
           .append(recordedMedia, downloadButton);
       };
 
-      document.getElementById(`aud-record-status`).innerText =
-        "Recording";
-
-      thisButton.disabled = true;
-      otherButton.disabled = false;
+      document.getElementById("start-aud-recording").disabled = true;
+      document.getElementById("start-aud-recording").hidden = true;
+      document.getElementById("stop-aud-recording").disabled = false;
+      document.getElementById("stop-aud-recording").hidden = false;
     });
 }
 document.getElementById(stopRecording);
-function stopRecording(thisButton, otherButton) {
+function stopRecording() {
   // Stop the recording
   window.mediaRecorder.stop();
 
@@ -122,8 +116,8 @@ function stopRecording(thisButton, otherButton) {
     track.stop();
   });
 
-  document.getElementById(`aud-record-status`).innerText =
-    "Recording done!";
-  thisButton.disabled = true;
-  otherButton.disabled = false;
+  document.getElementById('stop-aud-recording').disabled = true;
+  document.getElementById('stop-aud-recording').hidden = true;
+  document.getElementById('start-aud-recording').disabled = false;
+  document.getElementById("start-aud-recording").hidden = false;
 }
