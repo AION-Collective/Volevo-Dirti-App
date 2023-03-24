@@ -11,30 +11,28 @@
   <title>Volevo Dirti</title>
 </head>
 
-<body>
-
-  
+<body background="./svg/Volevo Dirti Logo.svg">
 
   <div class="recording" id="aud-recorder">
     <button type="button" id="start-aud-recording" onclick="startRecording()">
-      <i class="fa fa-microphone fa-10x"></i>
+      <i class="fa fa-microphone fa-7x"></i>
     </button>
 
     <button type="button" id="stop-aud-recording" onclick="stopRecording()" hidden>
-      <i class="fa fa-stop fa-10x"></i>
+      <i class="fa fa-stop fa-7x"></i>
     </button>
   </div>
 
   <div class="player">
     <button type="button" id="playpause-track" onclick="playpauseTrack()">
-      <i class="fa fa-play-circle fa-10x"></i>
+      <i class="fa fa-play-circle fa-7x"></i>
     </button>
 
-    <button type="button" onclick="random()">
+    <!-- <button type="button" onclick="random()">
       <i class="fa fa-random fa-2x"></i>
-    </button>
+    </button> -->
+
   </div>
-  <img class="logo" src="./svg/Volevo Dirti Logo.svg" />
 
   <script src="./scripts/recorder.js"></script>
   <script src="./scripts/player.js"></script>

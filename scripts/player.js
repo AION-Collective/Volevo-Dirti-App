@@ -40,7 +40,7 @@ function randomBgColor() {
   let bg_color = "rgb(" + red + ", " + green + ", " + blue + ")";
 
   // Set the background to the new color
-  document.body.style.background = bg_color;
+  document.body.style.backgroundColor = bg_color;
 }
 
 function playpauseTrack() {
@@ -56,7 +56,7 @@ function playTrack() {
   is_playing = true;
 
   // Replace icon with the pause icon
-  playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-10x"></i>';
+  playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-7x"></i>';
   randomBgColor(); randomBgColor();
 }
 
@@ -66,7 +66,7 @@ function pauseTrack() {
   is_playing = false;
 
   // Replace icon with the play icon
-  playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-10x"></i>';
+  playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-7x"></i>';
 }
 
 function nextTrack() {
