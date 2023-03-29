@@ -2,10 +2,11 @@ body {
 	text-align: center;
 	color: white;
 	transition: background-color 2s;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 900px;
 
+}
+.img{
+	block-size: 800px;
+	box-align: center;
 }
 
 button {
@@ -14,12 +15,13 @@ button {
 	border: none;
 	text-align: center;
 	text-decoration: none;
+	margin: 10px;
 	cursor: pointer;
 	opacity: 0.7;
 	transition: opacity 0.2s;
 }
 
-button:hover {
+button:hover{
 	opacity: 1;
 }
 
@@ -33,22 +35,24 @@ a {
 }
 
 .recording {
-	margin-top: 20vh;
-	margin-left: auto;
-	margin-right: auto;
-	width: fit-content;
-	height: 10vh;
-	;
+	position: relative; inset-block-end: 680px; 
+	margin-inline-start: 0px;
+	z-index: 20;
 }
 
 .player {
-	margin: 10vh;
+	margin: 0vh;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+	position: relative; inset-block-end: 365px;
+	margin-inline-start: 1px;
+	z-index: 20;
 }
 
+/* Change the mouse cursor to a pointer
+	 when hovered over */
 i.fa-play-circle,
 i.fa-pause-circle {
 	cursor: pointer;
