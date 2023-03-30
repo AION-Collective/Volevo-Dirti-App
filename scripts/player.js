@@ -66,7 +66,7 @@ function pauseTrack() {
   is_playing = false;
 
   // Replace icon with the play icon
-  playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-7x"></i>';
+  playpause_btn.innerHTML = '<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_6jsf4dqj.json"  background="transparent"  speed="1"  style="width: 200px; block-size: 200px;"  loop autoplay></lottie-player>';
 }
 
 function nextTrack() {
