@@ -35,7 +35,7 @@ a {
 }
 
 .recording {
-	position: relative; inset-block-end: 680px; 
+	position: relative; inset-block-end: 685px; 
 	margin-inline-start: 0px;
 	z-index: 20;
 }
@@ -46,7 +46,7 @@ a {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	position: relative; inset-block-end: 365px;
+	position: relative; inset-block-end: 400px;
 	margin-inline-start: 1px;
 	z-index: 20;
 }
