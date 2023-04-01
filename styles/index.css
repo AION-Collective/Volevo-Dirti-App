@@ -2,13 +2,38 @@ body {
 	text-align: center;
 	color: white;
 	transition: background-color 2s;
+	overflow-y: hidden;
+	overflow-x: hidden;
 
 }
-.img{
+.svg{
 	block-size: 800px;
 	box-align: center;
 }
-
+.scarica{
+	font-size: 18px;
+	text-align: center;
+	font-style: italic;
+	text-decoration: none;
+}
+.logo{
+	scale: 0.15;
+	position: relative;
+	inset-block-end: 590px; 
+	margin-inline-start: 120px;
+	z-index: 20;
+}
+.develop{
+	font-style: italic;
+	position: relative;
+	inset-block-end: 460px; 
+	margin-inline-start: 325px;
+	z-index: 20;
+}
+.fa {
+	position: relative; 
+	inset-block-end: -55px;
+}
 button {
 	background-color: rgba(255, 255, 255, 0);
 	color: white;
@@ -47,7 +72,7 @@ a {
 	flex-direction: column;
 	justify-content: center;
 	position: relative; inset-block-end: 400px;
-	margin-inline-start: 1px;
+	margin-inline-start: 0px;
 	z-index: 20;
 }
 
