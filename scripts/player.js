@@ -9,9 +9,6 @@ let curr_track = document.createElement("audio");
 // Define the list of tracks that have to be played
 let track_list = [
   {
-    name: "Forest",
-    artist: "AION",
-    image: "URL",
     path: "./tracks/Forest.wav"
   }
 ];
@@ -56,7 +53,7 @@ function playTrack() {
   is_playing = true;
 
   // Replace icon with the pause icon
-  playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-7x"></i>';
+  playpause_btn.innerHTML = '<i class="fa fa-thin fa-pause-circle fa-7x"></i>';
   randomBgColor(); randomBgColor();
 }
 
