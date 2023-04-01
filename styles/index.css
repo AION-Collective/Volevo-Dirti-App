@@ -17,8 +17,8 @@ body {
 	text-decoration: none;
 }
 .logo{
-	scale: 0.15;
 	position: relative;
+	scale: 0.15;
 	inset-block-end: 590px; 
 	margin-inline-start: 120px;
 	z-index: 20;
