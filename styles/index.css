@@ -33,7 +33,7 @@ body {
 }
 .fa {
 	position: relative; 
-	inset-block-end: -55px;
+	inset-block-end: 10px;
 }
 button {
 	background-color: rgba(255, 255, 255, 0);
