@@ -19,20 +19,17 @@ body {
 .logo{
 	
 	position: relative;
-	scale: 0.15;
-	inset-block-end: 590px; 
-	margin-inline-start: 120px;
+	inline-size: 150px;
+	inset-block-end: 145px; 
+	margin-inline-start: 325px;
 	z-index: 20;
 }
 .develop{
 	font-style: italic;
 	position: relative;
-	inset-block-end: 460px; 
+	inset-block-end: 130px; 
 	margin-inline-start: 325px;
 	z-index: 20;
-}
-.dm{
-	position: relative;
 }
 .fa {
 	position: relative; 
@@ -64,7 +61,7 @@ a {
 }
 
 .recording {
-	position: relative; inset-block-end: 685px; 
+	position: relative; inset-block-end: 798px; 
 	margin-inline-start: 0px;
 	z-index: 20;
 }
@@ -75,7 +72,7 @@ a {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	position: relative; inset-block-end: 400px;
+	position: relative; inset-block-end: 508px;
 	margin-inline-start: 0px;
 	z-index: 20;
 }
