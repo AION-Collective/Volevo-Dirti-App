@@ -17,6 +17,7 @@ body {
 	text-decoration: none;
 }
 .logo{
+	
 	position: relative;
 	scale: 0.15;
 	inset-block-end: 590px; 
@@ -29,6 +30,9 @@ body {
 	inset-block-end: 460px; 
 	margin-inline-start: 325px;
 	z-index: 20;
+}
+.dm{
+	position: relative;
 }
 .fa {
 	position: relative; 
