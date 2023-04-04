@@ -118,6 +118,6 @@ function stopRecording() {
 
   document.getElementById('stop-aud-recording').disabled = true;
   document.getElementById('stop-aud-recording').hidden = true;
-  document.getElementById('start-aud-recording').disabled = false;
+  document.getElementById('start-aud-recording').disabled = true;
   document.getElementById("start-aud-recording").hidden = false;
 }
