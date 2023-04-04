@@ -76,7 +76,11 @@ a {
 	margin-inline-start: 0px;
 	z-index: 20;
 }
-
+.fa-pause-circle{
+	position: relative;
+	inset-block-end: -55px; 
+	margin-inline-start: 0px;
+}
 /* Change the mouse cursor to a pointer
 	 when hovered over */
 i.fa-play-circle,
