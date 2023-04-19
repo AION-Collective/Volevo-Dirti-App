@@ -51,10 +51,12 @@ function playTrack() {
   // Play the loaded track
   curr_track.play();
   is_playing = true;
-
+  
   // Replace icon with the pause icon
   playpause_btn.innerHTML = '<i class="fa fa-thin fa-pause-circle fa-7x"></i>';
   randomBgColor(); randomBgColor();
+  curr_track.currentTime = Math.floor(Math.random() * curr_track.duration);
+  playTrack();
 }
 
 function pauseTrack() {
