@@ -59,7 +59,7 @@ function startRecording() {
         const recordedMedia = document.createElement(
           "audio"
         );
-        //recordedMedia.controls = true;
+        recordedMedia.controls = true;
 
         // You can not directly set the blob as
         // the source of the video or audio element
@@ -81,8 +81,8 @@ function startRecording() {
         downloadButton.download = "Recorded-Media";
 
         downloadButton.href = recordedMediaURL;
-        downloadButton.innerText = "Scarica il tuo messaggio";
-        downloadButton.classList.add('scarica');
+        downloadButton.innerText = "Download";
+
         downloadButton.onclick = () => {
           /* After download revoke the created URL
         using URL.revokeObjectURL() method to
@@ -118,6 +118,6 @@ function stopRecording() {
 
   document.getElementById('stop-aud-recording').disabled = true;
   document.getElementById('stop-aud-recording').hidden = true;
-  document.getElementById('start-aud-recording').disabled = true;
+  document.getElementById('start-aud-recording').disabled = false;
   document.getElementById("start-aud-recording").hidden = false;
 }

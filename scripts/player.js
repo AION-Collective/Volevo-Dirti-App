@@ -51,12 +51,11 @@ function playTrack() {
   // Play the loaded track
   curr_track.play();
   is_playing = true;
-  
   // Replace icon with the pause icon
   playpause_btn.innerHTML = '<i class="fa fa-thin fa-pause-circle fa-7x"></i>';
-  randomBgColor(); randomBgColor();
-  curr_track.currentTime = Math.floor(Math.random() * curr_track.duration);
-  playTrack();
+
+  sleep(7000);
+  random();
 }
 
 function pauseTrack() {
@@ -65,7 +64,7 @@ function pauseTrack() {
   is_playing = false;
 
   // Replace icon with the play icon
-  playpause_btn.innerHTML = '<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_6jsf4dqj.json"  background="transparent"  speed="1"  style="width: 200px; block-size: 200px;"  loop autoplay></lottie-player>';
+  playpause_btn.innerHTML = '<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_6jsf4dqj.json"  background="transparent"  speed="1"  style="width: 150px; block-size: 150px;"  loop autoplay></lottie-player>';
 }
 
 function nextTrack() {
@@ -92,7 +91,12 @@ function prevTrack() {
 
 function random() {
   curr_track.currentTime = Math.floor(Math.random() * curr_track.duration);
+  randomBgColor();
   playTrack();
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 loadTrack(track_index);
