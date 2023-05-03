@@ -11,45 +11,46 @@
   <title>Volevo Dirti</title>
 </head>
 
-<body background="./svg/Volevo Dirti Logo.svg">
+<body>
 
-  <div class="container">
-    <div class="recording" id="aud-recorder">
-      <button type="button" id="start-aud-recording" onclick="startRecording()">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_sbqqebtm.json" background="transparent"
-          speed="1" style="width: 100px; height: 100px;" loop autoplay></lottie-player>
-      </button>
+  <div class=container>
+   
 
-      <button type="button" id="stop-aud-recording" onclick="stopRecording()" hidden>
-        <i class="fa fa-stop fa-7x"></i>
-      </button>
-    </div>
+      
+      
+    <img class="svg" src="./svg/Volevo Dirti Logo.svg">
+    <h4 class="develop">Developed by</h4>
+    <a id="logo" href="https://www.aioncollective.com" target="_blank">
+    <img class="logo" src="./svg/Logo_W.png">
+    </a>
+  <div class="recording" id="aud-recorder">
+    <button type="button" id="start-aud-recording" onclick="startRecording()">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_sbqqebtm.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop autoplay></lottie-player>
+    </button>
 
-    <div class="player">
-      <button type="button" id="playpause-track" onclick="playpauseTrack()">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_6jsf4dqj.json" background="transparent" speed="1"
-          style="width: 150px; block-size: 150px;" loop autoplay></lottie-player>
-      </button>
+    <button type="button" id="stop-aud-recording" onclick="stopRecording()" hidden>
+      <i class="fa fa-stop fa-7x"></i>
+    </button>
+  </div>
 
-      <!-- <button type="button" onclick="random()">
+  <div class="player">
+    <button type="button" id="playpause-track" onclick="playpauseTrack()">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_6jsf4dqj.json"  background="transparent"  speed="1"  style="width: 200px; block-size: 200px;"  loop autoplay></lottie-player>
+    </button>
+  </div>
+
+    <!-- <button type="button" onclick="random()">
       <i class="fa fa-random fa-2x"></i>
     </button> -->
 
-    </div>
   </div>
-
-
-  <footer>
-    <h4 class="develop">Developed by</h4>
-    <a id="logo" href="https://www.aioncollective.com" target="_blank">
-      <img class="logo" src="./svg/Logo_W.png">
-    </a>
-  </footer>
 
   <script src="./scripts/recorder.js"></script>
   <script src="./scripts/player.js"></script>
 </body>
 
 </html>
+
+
