@@ -11,11 +11,10 @@ body {
 }
 
 footer {
-	display: flex;
 	position: absolute;
 	bottom: 0;
 	width: 99%;
-	justify-content: center;
+	align-content: center;
 	align-items: center;
 }
 
@@ -54,9 +53,16 @@ a {
 	width: fit-content;
 }
 
+.scarica {
+	font-size: 18px;
+	text-align: center;
+	font-style: italic;
+	text-decoration: none;
+	display: block;
+}
+
 .player {
 	margin-top: 43vh;
-	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
@@ -68,12 +74,12 @@ i.fa-pause-circle {
 }
 
 .logo {
-	display: inline;
-	inline-size: 100px;
-	margin-left: 10px;
+	display: block;
+	max-width: 100px;
+	margin-left: 45%;
 }
 
 .develop {
+	display: block;
 	font-style: italic;
-	display: inline;
 }
