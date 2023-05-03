@@ -2,34 +2,52 @@ body {
 	text-align: center;
 	color: white;
 	transition: background-color 2s;
-	background-repeat: no-repeat;
-	background-position-x: center;
-	background-size: 42vh;
-	min-height: 85vh;
-	user-select: none;
+	overflow-y: hidden;
+	overflow-x: hidden;
+
+}
+.svg{
+	block-size: 800px;
+	box-align: center;
+}
+.scarica{
+	font-size: 18px;
+	text-align: center;
+	font-style: italic;
+	text-decoration: none;
+}
+.logo{
+	
 	position: relative;
+	inline-size: 150px;
+	inset-block-end: 145px; 
+	margin-inline-start: 325px;
+	z-index: 20;
 }
-
-footer {
-	position: absolute;
-	bottom: 0;
-	width: 99%;
-	align-content: center;
-	align-items: center;
+.develop{
+	font-style: italic;
+	position: relative;
+	inset-block-end: 130px; 
+	margin-inline-start: 325px;
+	z-index: 20;
 }
-
+.fa {
+	position: relative; 
+	inset-block-end: 10px;
+}
 button {
 	background-color: rgba(255, 255, 255, 0);
 	color: white;
 	border: none;
 	text-align: center;
 	text-decoration: none;
+	margin: 10px;
 	cursor: pointer;
 	opacity: 0.7;
 	transition: opacity 0.2s;
 }
 
-button:hover {
+button:hover{
 	opacity: 1;
 }
 
@@ -42,44 +60,30 @@ a {
 	color: white;
 }
 
-.container {
-	margin-top: 13vh;
-	padding-bottom: 15vh;
-}
-
 .recording {
-	margin-left: auto;
-	margin-right: auto;
-	width: fit-content;
-}
-
-.scarica {
-	font-size: 18px;
-	text-align: center;
-	font-style: italic;
-	text-decoration: none;
-	display: block;
+	position: relative; inset-block-end: 810px; 
+	margin-inline-start: 0px;
+	z-index: 20;
 }
 
 .player {
-	margin-top: 43vh;
+	margin: 0vh;
+	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+	position: relative; inset-block-end: 508px;
+	margin-inline-start: 0px;
+	z-index: 20;
 }
-
+.fa-pause-circle{
+	position: relative;
+	inset-block-end: -55px; 
+	margin-inline-start: 0px;
+}
+/* Change the mouse cursor to a pointer
+	 when hovered over */
 i.fa-play-circle,
 i.fa-pause-circle {
 	cursor: pointer;
-}
-
-.logo {
-	display: block;
-	max-width: 100px;
-	margin-left: 45%;
-}
-
-.develop {
-	display: block;
-	font-style: italic;
 }
